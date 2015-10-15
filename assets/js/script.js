@@ -1,6 +1,5 @@
 $(document).ready(function () {
     $('.vue').hide();
-
     // Routeur
     $('.link').on('click', function () {
         console.log("ok");
@@ -8,4 +7,4 @@ $(document).ready(function () {
         $('.vue').hide();
         $('.' + vue).show();
     })
-})
+});
