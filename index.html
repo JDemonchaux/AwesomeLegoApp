@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/material.icons.css"/>
+    <link rel="stylesheet" href="assets/css/materialize.min.css"/>
+    <link rel="stylesheet" href="assets/css/design.css"/>
+
+    <title>Compteur Salon Lego</title>
+</head>
+<body>
+<nav>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo"><img src="assets/LEGO_logo.jpg" class="logo"/></a>
+        <ul id="nav-mobile" class="right">
+            <li><a href="#!" class="link" data-view="entree">Entrée</a></li>
+            <li><a href="#!" class="link" data-view="sortie">Sortie</a></li>
+            <li><a href="#!" class="link" data-view="configuration">Configuration</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="vue entree">
+        <div class="row">
+            <h1>Gérer les entrées</h1>
+
+            <div class="card">
+                <div class="card-content">
+                    Il y a actuellement <span class="nbVisiteur">0</span> visiteur(s) dans le salon
+                </div>
+            </div>
+
+            <br/>
+
+            <div class="col s12">
+                <div class="row">
+                    <a class="waves-effect waves-light btn-large col s6 bt">+1</a>
+                    <a class="waves-effect waves-light btn-large col s6 bt">+2</a>
+                    <a class="waves-effect waves-light btn-large col s6 bt">+3</a>
+                    <a class="waves-effect waves-light btn-large col s6 bt">+4</a>
+                    <a class="waves-effect waves-light btn-large col s12 bt5">+5</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="vue sortie">
+        <div class="row">
+            <h1>Gérer les sortie</h1>
+
+            <div class="card">
+                <div class="card-content">
+                    Il y a actuellement <span class="nbVisiteur">0</span> visiteur(s) dans le salon
+                </div>
+            </div>
+
+            <br/>
+
+            <div class="col s12">
+                <div class="row">
+                    <a class="waves-effect waves-light btn-large col s6 bt red darken-1">-1</a>
+                    <a class="waves-effect waves-light btn-large col s6 bt red darken-1">-2</a>
+                    <a class="waves-effect waves-light btn-large col s6 bt red darken-1">-3</a>
+                    <a class="waves-effect waves-light btn-large col s6 bt red darken-1">-4</a>
+                    <a class="waves-effect waves-light btn-large col s12 bt5 red darken-1">-5</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="vue configuration">
+        <div class="row">
+            <h1>Configuration</h1>
+
+            <div class="input-field col s9">
+                <label for="adresse">Adresse du serveur</label>
+                <input type="text" id="adresse"/>
+            </div>
+            <div class="col s2 valign-wrapper">
+                <div class="valign">
+                    <a class="waves-effect waves-light btn-large blue darken-1 valign">Connect!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="application/javascript" src="assets/js/jquery.js"></script>
+<script type="application/javascript" src="assets/js/materialize.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.vue').hide();
+
+
+        // Routeur
+        $('.link').on('click', function () {
+            console.log("ok");
+            var vue = $(this).attr("data-view");
+            $('.vue').hide();
+            $('.' + vue).show();
+        })
+    })
+</script>
+</body>
+</html>
